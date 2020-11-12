@@ -2,4 +2,4 @@
 # convert untracked files
 git status --porcelain=v2 | grep -e "^? " | awk '{ print $2 }' | tr '\n' '\0' | xargs -0 dos2unix;
 # convert modified files 
-git status --porcelain=v2 | grep -e "^. .[MA] N\.\.\." | awk '{ print $5 }' | tr '\n' '\0' | xargs -0 dos2unix;
+git status --porcelain=v2 | grep -e "^. .[MA] N\.\.\." | awk '{ print $9 }' | tr '\n' '\0' | xargs -0 dos2unix;
